@@ -1,0 +1,10 @@
+.navbar{
+    background-color: #303f9f;
+    height: 5.2em;
+}
+
+.navbar-brand{
+    color: white;
+    font-size: 2.2vw;
+    font-weight: bold;
+}

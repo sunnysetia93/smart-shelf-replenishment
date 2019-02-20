@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Socket } from 'ngx-socket-io';
+import {ApiService} from './api.service';
 
 @Component({
   selector: 'app-root',
@@ -11,14 +12,18 @@ export class AppComponent {
   videoInput1 = "";
   videoInput2 = "";
   
-  constructor(private socket:Socket){
+  constructor(private socket:Socket, private API:ApiService){
     this.getMessageCam1();
     this.getMessageCam2();
-    }
+    this.getRacks();
+  }
 
-  // sendMessage(msg: string){
-  //   this.socket.emit("message", msg);
-  // }
+  getRacks(){
+    this.API.getRacks().subscribe(data=>{
+      console.log(data);
+    })
+  }
+
   getMessageCam1() {
       return this.socket
           .fromEvent("cam1")
