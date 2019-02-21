@@ -1,5 +1,84 @@
-<!-- <img src="{{videoInput1}}" alt="Red dot" />
-<img src="{{videoInput2}}" alt="Red dot" /> -->
 <nav class="navbar">
     <span class="navbar-brand mb-0 h2">Shelf Replenishment</span>
 </nav>
+
+<div class="row main-div">
+    <div class="info-div col-md-4 col-sm-3">
+        <div class="row mapping-div">
+            <div class="col-md-12">
+                <div class="row mapping-heading">
+                    Mapping
+                </div>
+                <div class="row mapping-table-row">
+                    <table class="table table-sm mapping-table">
+                        <thead>
+                            <tr>
+                            <th class="text-center" scope="col">Shelf No.</th>
+                            <th class="text-center"scope="col">Product</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let shelf of shelves;let y=index">
+                                <td class="text-center">{{shelf.id}}</td>
+                                <td class="text-center">
+                                    <select [(ngModel)]="shelfSelected[y].product">
+                                            <option *ngFor="let product of products" [value]="product.name">
+                                                {{product.name}}
+                                            </option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row submit-btn-row">
+                    <button class="btn btn-primary" (click)="formSubmit()">Submit</button>
+                </div>
+            </div>
+        </div>
+        <div class="row updates-div">
+                <div class="col-md-12">
+                    <div class="row mapping-heading">
+                            Updates
+                    </div>
+                    <div class="row updates-table">
+                        <table class="table table-sm mapping-table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center" scope="col" style="width:40%;">Time Stamp</th>
+                                    <th class="text-center"scope="col" style="width:40%;">Operation</th>
+                                <th class="text-center"scope="col" style="width:15%;">Product</th>
+                                <th class="text-center"scope="col" style="width:15%;">Shelf</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th class="text-center" style="width:45%;">22 Feb 2018</th>
+                                    <th class="text-center" style="width:15%;">Insert</th>
+                                    <th class="text-center" style="width:15%;">2</th>
+                                    <th class="text-center" style="width:40%;">1</th>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <div class="stream-div col-md-5 col-sm-6">
+        <div class="row camera-feed-row">
+            <img src="{{videoInput1}}" />
+        </div>
+        <div class="row camera-feed-row">
+            <img src="{{videoInput2}}" />
+        </div>
+    </div>
+    <div class="notification-div col-md-3 col-sm-3">
+        <div class="notification-heading row">
+            <p>Notifications</p>
+        </div>
+        <div class="notification-body row">
+
+        </div>
+    </div>
+</div>

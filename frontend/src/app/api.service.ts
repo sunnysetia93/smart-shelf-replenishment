@@ -16,4 +16,8 @@ export class ApiService {
   getRacks(){
     return this.http.get(this.BASE_URL+'api/rack/all');
   }
+
+  getProducts(){
+    return this.http.get(this.BASE_URL+'api/product');
+  }
 }

@@ -4,8 +4,8 @@ const shelf = require('../db').Shelf
 
 Router.get('/',(req,res)=>{
 
-    product.findAll().then((shelves)=>{
-        res.send(shelves);
+    product.findAll().then((products)=>{
+        res.send(products);
     })
 })
 
