@@ -80,9 +80,9 @@ async function dbRefresh()
         await Product.findOrCreate({where:{id:4},defaults:{name:'Ketchup',quantity:50}});
 
         await Shelf.findOrCreate({where:{id:1},defaults:{number:1,productId:1,rackId:1,type:''}});
-        await Shelf.findOrCreate({where:{id:2},defaults:{number:1,productId:2,rackId:1,type:''}});
-        await Shelf.findOrCreate({where:{id:3},defaults:{number:1,productId:3,rackId:1,type:''}});
-        await Shelf.findOrCreate({where:{id:4},defaults:{number:1,productId:4,rackId:1,type:''}});
+        await Shelf.findOrCreate({where:{id:2},defaults:{number:2,productId:2,rackId:1,type:''}});
+        await Shelf.findOrCreate({where:{id:3},defaults:{number:3,productId:3,rackId:1,type:''}});
+        await Shelf.findOrCreate({where:{id:4},defaults:{number:4,productId:4,rackId:1,type:''}});
 
     }
     catch(err)

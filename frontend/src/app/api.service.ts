@@ -20,4 +20,12 @@ export class ApiService {
   getProducts(){
     return this.http.get(this.BASE_URL+'api/product');
   }
+
+  updateProductAllocation(shelfId,productName){
+    let body = {
+      productName:productName,
+      shelfId:shelfId
+    }
+    return this.http.post(this.BASE_URL+'api/shelf/allocateProduct',body);
+  }
 }

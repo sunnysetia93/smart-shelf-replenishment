@@ -1,5 +1,5 @@
 .navbar{
-    background-color: #1565c0;
+    background-color: #005662;
     height: 10vh;
 }
 
@@ -36,7 +36,7 @@
 .mapping-heading{
     padding-top: 2%;
     padding-left: 42%;
-    background-color: #1565c0;
+    background-color: #4fb3bf;
     color: white;
     font-weight: bold;
     height: 15%;
@@ -72,12 +72,18 @@
     height: 50%;
     margin: 0px;
     margin-left: 15%;
-    margin-top: 2%;
+    margin-top: 0.5%;
 }
 
 .camera-feed-row img{
     height: 96%;
     width: 70%;
+}
+
+.camerafeedBtn{
+    height: 96%;
+    width: 70%;
+    background-color: #4fb3bf;
 }
 
 
@@ -98,7 +104,7 @@
     font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
     font-size: 1.5em;
     font-weight: bold;
-    background-color: #1565c0;  
+    background-color: #4fb3bf;  
 }
 
 .notification-heading p {

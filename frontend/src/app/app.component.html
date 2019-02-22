@@ -1,7 +1,6 @@
 <nav class="navbar">
     <span class="navbar-brand mb-0 h2">Shelf Replenishment</span>
 </nav>
-
 <div class="row main-div">
     <div class="info-div col-md-4 col-sm-3">
         <div class="row mapping-div">
@@ -15,18 +14,21 @@
                             <tr>
                             <th class="text-center" scope="col">Shelf No.</th>
                             <th class="text-center"scope="col">Product</th>
+                            <th class="text-center"scope="col">Space Available</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr *ngFor="let shelf of shelves;let y=index">
                                 <td class="text-center">{{shelf.id}}</td>
                                 <td class="text-center">
-                                    <select [(ngModel)]="shelfSelected[y].product">
-                                            <option *ngFor="let product of products" [value]="product.name">
+                                    <select [(ngModel)]="shelfSelected[y].product" (change)="selectionChange($event.target.value)">
+                                            <option value="">None</option>
+                                            <option *ngFor="let product of products" [value]="product.name" [disabled]="product.isSelected==true">
                                                 {{product.name}}
                                             </option>
                                     </select>
                                 </td>
+                                <td class="text-center">{{shelf.availability}}%</td>
                             </tr>
                         </tbody>
                     </table>
@@ -67,10 +69,21 @@
     </div>
     <div class="stream-div col-md-5 col-sm-6">
         <div class="row camera-feed-row">
-            <img src="{{videoInput1}}" />
+            <ng-container *ngIf="videoInput1==null; else videoInputOne">
+                <button class="btn btn-secondary camerafeedBtn" disabled> Camera Feed 1</button>
+            </ng-container>
+            <ng-template #videoInputOne>
+                <img src="{{videoInput1}}" />                
+            </ng-template>
+            
         </div>
         <div class="row camera-feed-row">
-            <img src="{{videoInput2}}" />
+            <ng-container *ngIf="videoInput2==null; else videoInputTwo">
+                    <button class="btn btn-secondary camerafeedBtn" disabled> Camera Feed 2</button>
+            </ng-container>
+            <ng-template #videoInputTwo>
+                <img src="{{videoInput2}}" />
+            </ng-template>
         </div>
     </div>
     <div class="notification-div col-md-3 col-sm-3">

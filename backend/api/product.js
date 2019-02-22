@@ -4,7 +4,11 @@ const shelf = require('../db').Shelf
 
 Router.get('/',(req,res)=>{
 
-    product.findAll().then((products)=>{
+    product.findAll({
+        include:[{
+            model:shelf
+        }]
+    }).then((products)=>{
         res.send(products);
     })
 })
