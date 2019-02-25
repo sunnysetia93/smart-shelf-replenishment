@@ -105,14 +105,11 @@
     font-size: 1.5em;
     font-weight: bold;
     background-color: #4fb3bf;  
+    text-align: center;
 }
 
-.notification-heading p {
-    position: absolute;
-    top: 4%;
-    bottom: 4%;
-    left: 26%;
-    right: 26%;
+.notification-heading div {
+    margin: auto auto;
 }
 
 .notification-body{

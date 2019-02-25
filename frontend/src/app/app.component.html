@@ -6,6 +6,7 @@
         <div class="row mapping-div">
             <div class="col-md-12">
                 <div class="row mapping-heading">
+                    <fa-icon [icon]="faTable" style="margin-right:10px;"></fa-icon>
                     Mapping
                 </div>
                 <div class="row mapping-table-row">
@@ -41,24 +42,25 @@
         <div class="row updates-div">
                 <div class="col-md-12">
                     <div class="row mapping-heading">
-                            Updates
+                        <fa-icon [icon]="faDatabase" style="margin-right:10px;"></fa-icon>
+                        Updates
                     </div>
                     <div class="row updates-table">
                         <table class="table table-sm mapping-table">
                             <thead>
                                 <tr>
                                     <th class="text-center" scope="col" style="width:40%;">Time Stamp</th>
+                                    <th class="text-center"scope="col" style="width:15%;">Product</th>
+                                    <th class="text-center"scope="col" style="width:15%;">Shelf</th>
                                     <th class="text-center"scope="col" style="width:40%;">Operation</th>
-                                <th class="text-center"scope="col" style="width:15%;">Product</th>
-                                <th class="text-center"scope="col" style="width:15%;">Shelf</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <th class="text-center" style="width:45%;">22 Feb 2018</th>
-                                    <th class="text-center" style="width:15%;">Insert</th>
                                     <th class="text-center" style="width:15%;">2</th>
                                     <th class="text-center" style="width:40%;">1</th>
+                                    <th class="text-center" style="width:15%;">Insert</th>
 
                                 </tr>
                             </tbody>
@@ -70,7 +72,9 @@
     <div class="stream-div col-md-5 col-sm-6">
         <div class="row camera-feed-row">
             <ng-container *ngIf="videoInput1==null; else videoInputOne">
-                <button class="btn btn-secondary camerafeedBtn" disabled> Camera Feed 1</button>
+                <button class="btn btn-secondary camerafeedBtn" disabled> 
+                        <fa-icon [icon]="faVideo" style="margin-right:10px; font-size: 100px"></fa-icon>
+                </button>
             </ng-container>
             <ng-template #videoInputOne>
                 <img src="{{videoInput1}}" />                
@@ -79,7 +83,9 @@
         </div>
         <div class="row camera-feed-row">
             <ng-container *ngIf="videoInput2==null; else videoInputTwo">
-                    <button class="btn btn-secondary camerafeedBtn" disabled> Camera Feed 2</button>
+                    <button class="btn btn-secondary camerafeedBtn" disabled> 
+                        <fa-icon [icon]="faVideo" style="margin-right:10px; font-size: 100px"></fa-icon>
+                        </button>
             </ng-container>
             <ng-template #videoInputTwo>
                 <img src="{{videoInput2}}" />
@@ -88,7 +94,10 @@
     </div>
     <div class="notification-div col-md-3 col-sm-3">
         <div class="notification-heading row">
-            <p>Notifications</p>
+            <div>
+                <fa-icon [icon]="faBell" style="margin-right:10px;"></fa-icon>
+                Notifications
+            </div>
         </div>
         <div class="notification-body row">
 

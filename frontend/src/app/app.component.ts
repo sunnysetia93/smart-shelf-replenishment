@@ -1,6 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { Socket } from 'ngx-socket-io';
+import { faBell,faTable,faVideo,faDatabase } from '@fortawesome/free-solid-svg-icons';
+
 
 import {ApiService} from './api.service';
 
@@ -21,6 +23,13 @@ export class AppComponent implements OnInit {
     { shelfId:3, product:'' },
     { shelfId:4, product:'' }
   ]
+
+  faBell = faBell;
+  faTable = faTable;
+  faVideo = faVideo;
+  faDatabase =faDatabase;
+
+
   
   constructor(private socket:Socket, private API:ApiService,public dialog: MatDialog){
     this.getMessageCam1();

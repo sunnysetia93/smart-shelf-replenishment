@@ -6,6 +6,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import {HttpClientModule} from '@angular/common/http';
 import {MatNativeDateModule} from '@angular/material';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 
 import {ApiService} from './api.service'
@@ -27,6 +29,7 @@ const config: SocketIoConfig = { url: 'http://localhost:8000', options: {} };
     MatNativeDateModule,
     MatDialogModule,
     BrowserAnimationsModule,
+    FontAwesomeModule,
     SocketIoModule.forRoot(config)
   ],
   providers: [ApiService],
