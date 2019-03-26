@@ -120,6 +120,22 @@
     background-color: #eeeeee;
 }
 
+.notification-row{
+    width: 100%;
+    max-height: 10%;
+    background: #b9f8ff;
+    padding: 0px;
+    margin:0px;
+    margin-top: 1%;
+    border-radius: 5px;
+}
+
+.notification-row p{
+    color: #005662;
+    margin:auto auto;
+    font-weight: bold;
+}
+
 
 @media screen and (max-width:600px){
     .notification-heading{

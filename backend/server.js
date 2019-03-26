@@ -12,10 +12,10 @@ var py_socket_mod1 = zmq.socket('sub')
 var py_socket_mod2 = zmq.socket('sub')
 
 py_socket_mod1.subscribe('');
-py_socket_mod1.connect('tcp://localhost:9000')
+py_socket_mod1.connect('tcp://192.168.43.158:9000')
 
 py_socket_mod2.subscribe('');
-py_socket_mod2.connect('tcp://localhost:9001')
+py_socket_mod2.connect('tcp://192.168.43.158:9001')
 
 const server = app.listen(8000,()=>{
     console.log('app running on port 8000');
@@ -27,9 +27,11 @@ io.on('connection',(client)=>{
     console.log('Client connected');
 
     py_socket_mod1.on('message', function(message){
+        console.log(message.toString())
         client.emit('cam1',message.toString())
       });
     py_socket_mod2.on('message', function(message){
+        console.log(message.toString())
     client.emit('cam2',message.toString())
     });
 })

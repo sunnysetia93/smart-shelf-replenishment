@@ -29,7 +29,11 @@
                                             </option>
                                     </select>
                                 </td>
-                                <td class="text-center">{{shelf.availability}}%</td>
+                                <td class="text-center" *ngIf="shelf.id==1">{{shelf.availability}}%</td>
+                                <td class="text-center" *ngIf="shelf.id==2">{{perOne}}%</td>
+                                <td class="text-center" *ngIf="shelf.id==3">{{perTwo}}%</td>
+                                <td class="text-center" *ngIf="shelf.id==4">{{shelf.availability}}%</td>
+
                             </tr>
                         </tbody>
                     </table>
@@ -48,7 +52,7 @@
                     <div class="row updates-table">
                         <table class="table table-sm mapping-table">
                             <thead>
-                                <tr>
+                                <tr style="color:#005662">
                                     <th class="text-center" scope="col" style="width:40%;">Time Stamp</th>
                                     <th class="text-center"scope="col" style="width:15%;">Product</th>
                                     <th class="text-center"scope="col" style="width:15%;">Shelf</th>
@@ -57,12 +61,17 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th class="text-center" style="width:45%;">22 Feb 2018</th>
+                                    <th class="text-center" style="width:45%;">25 Mar 2018</th>
                                     <th class="text-center" style="width:15%;">2</th>
-                                    <th class="text-center" style="width:40%;">1</th>
-                                    <th class="text-center" style="width:15%;">Insert</th>
-
+                                    <th class="text-center" style="width:40%;">2</th>
+                                    <th class="text-center" style="width:15%;">-</th>
                                 </tr>
+                                <!-- <tr>
+                                    <th class="text-center" style="width:45%;">25 Mar 2018</th>
+                                    <th class="text-center" style="width:15%;">3</th>
+                                    <th class="text-center" style="width:40%;">3</th>
+                                    <th class="text-center" style="width:15%;">-</th>
+                                </tr> -->
                             </tbody>
                         </table>
                     </div>
@@ -77,7 +86,7 @@
                 </button>
             </ng-container>
             <ng-template #videoInputOne>
-                <img src="{{videoInput1}}" />                
+                <img [src]="videoInput1" />                
             </ng-template>
             
         </div>
@@ -100,7 +109,12 @@
             </div>
         </div>
         <div class="notification-body row">
-
+            <div class="notification-row row" *ngIf="alert2==true">
+                <p>Kindly refill Shelf 3 containing Cold Drink Can!</p>
+            </div>
+            <!-- <div class="notification-row" *ngIf="alert2==true">
+                <p>Kindly refill Shelf 3 containing Cold Drink Can!</p>
+            </div> -->
         </div>
     </div>
 </div>
